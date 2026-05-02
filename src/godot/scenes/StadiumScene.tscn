@@ -1,0 +1,153 @@
+[gd_scene load_steps=20 format=3 uid="uid://stadium_scene"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://ball_node" path="res://scenes/BallNode.tscn" id="2_ball"]
+[ext_resource type="PackedScene" uid="uid://player_node" path="res://scenes/Player_node.tscn" id="3_player"]
+[ext_resource type="Texture2D" uid="uid://pitch_texture" path="res://../assets/textures/pitch/seamlessgrass08.png" id="4_grass"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pitch"]
+size = Vector3(105, 0.1, 68)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pitch"]
+size = Vector3(105, 0.1, 68)
+
+[sub_resource type="StandardMaterial3D" id="Mat_grass"]
+albedo_texture = ExtResource("4_grass")
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_post"]
+size = Vector3(0.1, 2.44, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_crossbar"]
+size = Vector3(0.1, 0.1, 7.32)
+
+[sub_resource type="StandardMaterial3D" id="Mat_white"]
+albedo_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_red"]
+albedo_color = Color(0.9, 0.1, 0.1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_player"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="Sky" id="Sky_1"]
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 2
+sky = SubResource("Sky_1")
+sdfgi_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+ssr_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+ambient_light_source = 3
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="GFGameState" type="GFGameState" parent="."]
+[node name="GFMatch" type="GFMatch" parent="."]
+[node name="GFReferee" type="GFReferee" parent="."]
+[node name="TeamHome" type="GFTeam" parent="."]
+[node name="TeamAway" type="GFTeam" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707, 0.707, 0, -0.707, 0.707, 0, 45, 30)
+fov = 60.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 20, 0)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="Pitch" type="StaticBody3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pitch"]
+mesh = SubResource("BoxMesh_pitch")
+surface_material_override/0 = SubResource("Mat_grass")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pitch"]
+shape = SubResource("BoxShape3D_pitch")
+
+[node name="GoalHome" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.5, 0, 0)
+[node name="PostLeft" type="MeshInstance3D" parent="GoalHome"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22, -3.66)
+mesh = SubResource("BoxMesh_post")
+surface_material_override/0 = SubResource("Mat_white")
+[node name="PostRight" type="MeshInstance3D" parent="GoalHome"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22, 3.66)
+mesh = SubResource("BoxMesh_post")
+surface_material_override/0 = SubResource("Mat_white")
+[node name="Crossbar" type="MeshInstance3D" parent="GoalHome"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44, 0)
+mesh = SubResource("BoxMesh_crossbar")
+surface_material_override/0 = SubResource("Mat_white")
+
+[node name="GoalAway" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, 0, 0)
+[node name="PostLeft" type="MeshInstance3D" parent="GoalAway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22, -3.66)
+mesh = SubResource("BoxMesh_post")
+surface_material_override/0 = SubResource("Mat_white")
+[node name="PostRight" type="MeshInstance3D" parent="GoalAway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22, 3.66)
+mesh = SubResource("BoxMesh_post")
+surface_material_override/0 = SubResource("Mat_white")
+[node name="Crossbar" type="MeshInstance3D" parent="GoalAway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44, 0)
+mesh = SubResource("BoxMesh_crossbar")
+surface_material_override/0 = SubResource("Mat_white")
+
+[node name="BallNode" parent="." instance=ExtResource("2_ball")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+
+[node name="Players" type="Node3D" parent="."]
+[node name="Player0" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -25, 0, -10)
+[node name="Player1" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -20, 0, -10)
+[node name="Player2" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -15, 0, -10)
+[node name="Player3" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -10, 0, -10)
+[node name="Player4" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -5, 0, -10)
+[node name="Player5" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 0, 0, -10)
+[node name="Player6" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 5, 0, -10)
+[node name="Player7" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 10, 0, -10)
+[node name="Player8" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 15, 0, -10)
+[node name="Player9" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 20, 0, -10)
+[node name="Player10" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 25, 0, -10)
+
+[node name="Player11" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -25, 0, 10)
+[node name="Player12" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -20, 0, 10)
+[node name="Player13" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -15, 0, 10)
+[node name="Player14" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -10, 0, 10)
+[node name="Player15" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, -5, 0, 10)
+[node name="Player16" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 0, 0, 10)
+[node name="Player17" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 5, 0, 10)
+[node name="Player18" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 10, 0, 10)
+[node name="Player19" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 15, 0, 10)
+[node name="Player20" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 20, 0, 10)
+[node name="Player21" parent="Players" instance=ExtResource("3_player")]
+transform = Transform3D(1,0,0,0,1,0,0,0,1, 25, 0, 10)

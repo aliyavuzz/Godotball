@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ball_node"]
+
+[ext_resource type="Script" path="res://scripts/BallNode.gd" id="1_ball"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1"]
+radius = 0.11
+height = 0.22
+
+[node name="BallNode" type="Node3D"]
+script = ExtResource("1_ball")
+
+[node name="GFBall" type="GFBall" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GFBall"]
+mesh = SubResource("SphereMesh_1")

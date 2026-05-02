@@ -1,5 +1,10 @@
 #include "register_types.h"
 #include "gf_game_state.h"
+#include "gf_ball.h"
+#include "gf_match.h"
+#include "gf_referee.h"
+#include "gf_player.h"
+#include "gf_team.h"
 #include <godot_cpp/core/defs.hpp>
 #include <gdextension_interface.h>
 #include <godot_cpp/godot.hpp>
@@ -9,6 +14,11 @@ using namespace godot;
 void initialize_football_module(ModuleInitializationLevel p_level) {
     if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) return;
     ClassDB::register_class<GFGameState>();
+    ClassDB::register_class<GFBall>();
+    ClassDB::register_class<GFMatch>();
+    ClassDB::register_class<GFReferee>();
+    ClassDB::register_class<GFPlayer>();
+    ClassDB::register_class<GFTeam>();
 }
 
 void uninitialize_football_module(ModuleInitializationLevel p_level) {

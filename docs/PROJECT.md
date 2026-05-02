@@ -104,14 +104,14 @@ Godot 4 (GDScript)
 | Faz | Plan Dosyası | Durum | Agent |
 |---|---|---|---|
 | 00 — Ortam Kurulum | plans/00-environment.md | ✅ Tamamlandı | orchestrator |
-| 01 — Asset Pipeline | plans/01-asset-pipeline.md | 🔄 Sıradaki | - |
-| 02 — GDExtension Altyapı | plans/02-gdextension-foundation.md | ⏳ Bekliyor | - |
-| 03 — Godot Sahne Yapısı | plans/03-godot-scene.md | ⏳ Bekliyor | - |
-| 04 — Top Fiziği | plans/04-ball-physics.md | ⏳ Bekliyor | - |
-| 05 — Maç + Hakem | plans/05-match-referee.md | ⏳ Bekliyor | - |
-| 06 — Oyuncu + AI | plans/06-player-ai.md | ⏳ Bekliyor | - |
-| 07 — Animasyon Sistemi | plans/07-animation.md | ⏳ Bekliyor | - |
-| 08 — Görsel Kalite | plans/08-visual-polish.md | ⏳ Bekliyor | - |
+| 01 — Asset Pipeline | plans/01-asset-pipeline.md | ✅ Tamamlandı | orchestrator |
+| 02 — GDExtension Altyapı | plans/02-gdextension-foundation.md | ✅ Tamamlandı | orchestrator |
+| 03 — Godot Sahne Yapısı | plans/03-godot-scene.md | ✅ Tamamlandı | orchestrator |
+| 04 — Top Fiziği | plans/04-ball-physics.md | ✅ Tamamlandı | orchestrator |
+| 05 — Maç + Hakem | plans/05-match-referee.md | ✅ Tamamlandı | orchestrator |
+| 06 — Oyuncu + AI | plans/06-player-ai.md | ✅ Tamamlandı | orchestrator |
+| 07 — Animasyon Sistemi | plans/07-animation.md | ✅ Tamamlandı | orchestrator |
+| 08 — Görsel Kalite | plans/08-visual-polish.md | ✅ Tamamlandı | orchestrator |
 
 ---
 
