@@ -1,0 +1,243 @@
+[
+  {
+    "name": "body",
+    "parent": null,
+    "position": [
+      0.0,
+      0.0,
+      0.96
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mesh_file": "models/pelvis.ase",
+    "children": [
+      "middle",
+      "left_thigh",
+      "right_thigh"
+    ]
+  },
+  {
+    "name": "middle",
+    "parent": "body",
+    "position": [
+      0.0,
+      0.0,
+      0.15
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mesh_file": "models/trunk.ase",
+    "children": [
+      "neck",
+      "left_shoulder",
+      "right_shoulder"
+    ]
+  },
+  {
+    "name": "neck",
+    "parent": "middle",
+    "position": [
+      0.0,
+      -0.03,
+      0.5
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mesh_file": "models/head.ase",
+    "children": []
+  },
+  {
+    "name": "left_shoulder",
+    "parent": "middle",
+    "position": [
+      0.16,
+      -0.01,
+      0.48
+    ],
+    "rotation": [
+      10.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "mesh_file": "models/upperarm.ase",
+    "children": [
+      "left_elbow"
+    ]
+  },
+  {
+    "name": "left_elbow",
+    "parent": "left_shoulder",
+    "position": [
+      -0.01,
+      -0.0,
+      -0.33
+    ],
+    "rotation": [
+      -6.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "mesh_file": "models/lowerarm.ase",
+    "children": []
+  },
+  {
+    "name": "right_shoulder",
+    "parent": "middle",
+    "position": [
+      -0.16,
+      -0.01,
+      0.48
+    ],
+    "rotation": [
+      10.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "mesh_file": "models/upperarm.ase",
+    "children": [
+      "right_elbow"
+    ]
+  },
+  {
+    "name": "right_elbow",
+    "parent": "right_shoulder",
+    "position": [
+      0.01,
+      -0.0,
+      -0.33
+    ],
+    "rotation": [
+      -6.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "mesh_file": "models/lowerarm.ase",
+    "children": []
+  },
+  {
+    "name": "left_thigh",
+    "parent": "body",
+    "position": [
+      0.087,
+      0.0,
+      -0.01
+    ],
+    "rotation": [
+      2.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "mesh_file": "models/upperleg.ase",
+    "children": [
+      "left_knee"
+    ]
+  },
+  {
+    "name": "left_knee",
+    "parent": "left_thigh",
+    "position": [
+      0.0,
+      0.0,
+      -0.42
+    ],
+    "rotation": [
+      -2.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "mesh_file": "models/lowerleg.ase",
+    "children": [
+      "left_ankle"
+    ]
+  },
+  {
+    "name": "left_ankle",
+    "parent": "left_knee",
+    "position": [
+      0.0,
+      -0.04,
+      -0.44
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mesh_file": "models/foot.ase",
+    "children": []
+  },
+  {
+    "name": "right_thigh",
+    "parent": "body",
+    "position": [
+      -0.087,
+      0.0,
+      -0.01
+    ],
+    "rotation": [
+      2.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "mesh_file": "models/upperleg.ase",
+    "children": [
+      "right_knee"
+    ]
+  },
+  {
+    "name": "right_knee",
+    "parent": "right_thigh",
+    "position": [
+      0.0,
+      0.0,
+      -0.42
+    ],
+    "rotation": [
+      -2.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "mesh_file": "models/lowerleg.ase",
+    "children": [
+      "right_ankle"
+    ]
+  },
+  {
+    "name": "right_ankle",
+    "parent": "right_knee",
+    "position": [
+      0.0,
+      -0.04,
+      -0.44
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mesh_file": "models/foot.ase",
+    "children": []
+  }
+]
