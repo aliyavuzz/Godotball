@@ -1,0 +1,14 @@
+# Godot
+src/godot/.godot/
+src/godot/.import/
+
+# Build artifacts
+src/extension/godot-cpp/bin/
+src/extension/godot-cpp/gen/
+src/extension/.sconsign.dblite
+*.o
+*.os
+
+# Python
+tools/__pycache__/
+*.pyc

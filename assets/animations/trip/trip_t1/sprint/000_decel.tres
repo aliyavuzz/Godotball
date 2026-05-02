@@ -1,0 +1,119 @@
+[gd_resource type="Animation" format=3]
+
+[resource]
+resource_name = "000_decel"
+length = 0.0667
+loop_mode = 1
+step = 0.1
+
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0, 1.0, 0.0, 0.0, -0.1, 0.2, 1.0, -0.022332, -0.374054, -0.06, 0.36666666666666664, 1.0, -0.089326, -0.703443, -0.08, 0.7, 1.0, -0.245647, -1.060748, -0.17, 0.9, 1.0, -0.334973, -1.295229, -0.235, 1.1333333333333333, 1.0, -0.4243, -1.518545, -0.235, 1.3666666666666667, 1.0, -0.513626, -1.74186, -0.185, 1.6, 1.0, -0.602952, -1.965176, -0.185)
+
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton3D:body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.0, 1.0, -0.109733, 0.0, 0.0, 0.993961, 0.36666666666666664, 1.0, -0.045094, -0.020765, -0.108864, 0.992816, 0.7, 1.0, -0.090007, -0.031585, -0.169689, 0.98087, 0.9, 1.0, -0.183945, -0.072045, -0.200153, 0.959642, 1.1333333333333333, 1.0, -0.138535, -0.062537, -0.203325, 0.967242, 1.3666666666666667, 1.0, -0.062532, -0.046142, -0.199921, 0.976725, 1.6, 1.0, 0.014008, -0.030184, -0.195232, 0.980192)
+
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton3D:middle")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0.0, 1.0, 0.125333, 0.0, 0.0, 0.992115, 0.36666666666666664, 1.0, -0.01963, 0.010392, -0.294205, 0.955484, 0.7, 1.0, -0.028882, -0.019969, -0.140327, 0.989482, 0.9, 1.0, 0.115201, 0.04981, -0.041494, 0.991224, 1.3666666666666667, 1.0, -0.009941, 0.044216, -0.04741, 0.997847, 1.6, 1.0, -0.072576, 0.041152, -0.050092, 0.995254)
+
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton3D:neck")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0.0, 1.0, 0.06279, 0.0, 0.0, 0.998027, 0.36666666666666664, 1.0, 0.065549, 0.059645, 0.050859, 0.994766, 0.7, 1.0, 0.080497, 0.043217, 0.050601, 0.994531, 0.9, 1.0, 0.078372, 0.003695, -0.046961, 0.995811, 1.6, 1.0, 0.18775, 0.009535, 0.033793, 0.981589)
+
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton3D:left_shoulder")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0.0, 1.0, -0.064635, -0.181632, 0.041833, 0.980348, 0.36666666666666664, 1.0, -0.15451, -0.153432, -0.252626, 0.942744, 0.7, 1.0, 0.03603, -0.135915, -0.349177, 0.926447, 1.1333333333333333, 1.0, 0.021002, -0.185714, -0.182576, 0.965264, 1.6, 1.0, -0.15236, -0.19473, -0.346829, 0.904752)
+
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton3D:left_elbow")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0.0, 1.0, -0.821444, 0.0, 0.0, 0.570289, 0.36666666666666664, 1.0, -0.910536, 0.0, 0.0, 0.41343, 0.7, 1.0, -0.86422, 0.0, 0.0, 0.503114, 1.1333333333333333, 1.0, -0.700832, -0.0, 0.0, 0.713327, 1.6, 1.0, -0.733656, -0.0, 0.0, 0.679521)
+
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skeleton3D:right_shoulder")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0.0, 1.0, 0.091981, 0.310301, 0.149161, 0.934347, 0.36666666666666664, 1.0, 0.120637, 0.365028, 0.157622, 0.909591, 0.7, 1.0, 0.12645, 0.160528, 0.210551, 0.955986, 1.1333333333333333, 1.0, -0.02201, 0.301682, 0.191151, 0.933791, 1.6, 1.0, 0.110267, 0.547555, 0.16398, 0.813102)
+
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skeleton3D:right_elbow")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0.0, 1.0, -0.500446, 0.0, 0.0, 0.865768, 0.36666666666666664, 1.0, -0.623601, 0.0, 0.0, 0.781743, 0.7, 1.0, -0.776294, 0.0, 0.0, 0.630372, 1.1333333333333333, 1.0, -0.713525, 0.0, 0.0, 0.70063, 1.6, 1.0, -0.302743, 0.0, 0.0, 0.953072)
+
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skeleton3D:left_thigh")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0.0, 1.0, -0.253869, -0.018452, 0.053486, 0.965582, 0.2, 1.0, -0.092054, -0.019137, 0.055206, 0.994038, 0.36666666666666664, 1.0, -0.221711, 0.022289, 0.02713, 0.97448, 0.7, 1.0, -0.402557, -0.01791, 0.07631, 0.912033, 0.9, 1.0, -0.358137, -0.017477, 0.022275, 0.93324, 1.1333333333333333, 1.0, -0.372707, -0.046258, 0.034223, 0.926163, 1.6, 1.0, -0.238074, -0.111415, 0.042186, 0.963913)
+
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Skeleton3D:left_knee")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0.0, 1.0, 0.470469, 0.0, 0.0, 0.882417, 0.2, 1.0, 0.491128, 0.0, 0.0, 0.871088, 0.36666666666666664, 1.0, 0.602718, 0.0, 0.0, 0.797954, 0.7, 1.0, 0.697976, 0.0, 0.0, 0.716122, 0.9, 1.0, 0.518247, 0.0, 0.0, 0.855231, 1.1333333333333333, 1.0, 0.621349, 0.0, 0.0, 0.783534, 1.6, 1.0, 0.608965, 0.0, 0.0, 0.793197)
+
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Skeleton3D:left_ankle")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0.0, 1.0, -0.118965, 0.0, 0.0, 0.992898, 0.2, 1.0, -0.228477, 0.0, 0.0, 0.973549, 0.36666666666666664, 1.0, -0.260208, 0.0, 0.0, 0.965552, 0.7, 1.0, -0.199067, 0.0, 0.0, 0.979986, 0.9, 1.0, -0.019763, 0.0, 0.0, 0.999805, 1.1333333333333333, 1.0, -0.144916, 0.0, 0.0, 0.989444, 1.6, 1.0, -0.400867, 0.0, 0.0, 0.916136)
+
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Skeleton3D:right_thigh")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0.0, 1.0, -0.270035, 0.028483, -0.073026, 0.959655, 0.2, 1.0, -0.292566, 0.037004, -0.069293, 0.953013, 0.36666666666666664, 1.0, -0.299492, 0.001805, -0.099108, 0.948936, 0.7, 1.0, -0.378488, 0.040229, -0.150559, 0.912392, 0.9, 1.0, -0.215134, 0.050203, -0.027535, 0.974904, 1.1333333333333333, 1.0, -0.289893, 0.067453, -0.020939, 0.954449, 1.6, 1.0, -0.502469, 0.101166, -0.059839, 0.856569)
+
+tracks/12/type = "rotation_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Skeleton3D:right_knee")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0.0, 1.0, 0.791915, 0.0, 0.0, 0.610631, 0.2, 1.0, 0.639638, 0.0, 0.0, 0.768677, 0.36666666666666664, 1.0, 0.399787, 0.0, 0.0, 0.916608, 0.7, 1.0, 0.709139, 0.0, 0.0, 0.705069, 0.9, 1.0, 0.777309, 0.0, 0.0, 0.629119, 1.1333333333333333, 1.0, 0.796686, 0.0, 0.0, 0.604393, 1.6, 1.0, 0.84165, 0.0, 0.0, 0.540023)
+
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Skeleton3D:right_ankle")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0.0, 1.0, 0.147251, 0.0, 0.0, 0.989099, 0.2, 1.0, -0.044497, 0.0, 0.0, 0.999009, 0.36666666666666664, 1.0, -0.11092, 0.0, 0.0, 0.993829, 0.7, 1.0, -0.063981, 0.0, 0.0, 0.997951, 0.9, 1.0, -0.325046, 0.0, 0.0, 0.945698, 1.1333333333333333, 1.0, -0.280136, 0.0, 0.0, 0.95996, 1.6, 1.0, -0.032603, 0.0, 0.0, 0.999468)

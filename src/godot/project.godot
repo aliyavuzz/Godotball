@@ -1,0 +1,10 @@
+; Engine configuration file.
+[application]
+config/name="Football GF Port"
+config/features=PackedStringArray("4.4", "Forward Plus")
+
+[physics]
+3d/physics_engine="JoltPhysics3D"
+
+[rendering]
+renderer/rendering_method="forward_plus"
