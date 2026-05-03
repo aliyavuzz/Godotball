@@ -9,7 +9,7 @@ func _ready():
 func load_basic_animations():
     # In a real scenario, we'd iterate through the directory. 
     # For now, let's load key movement animations.
-    var anim_dir = "res://../assets/animations/movement/"
+    var anim_dir = "res://assets/animations/movement/"
     # This is a bit complex due to directory structure, 
     # but we can add them to an AnimationLibrary.
     var lib = AnimationLibrary.new()

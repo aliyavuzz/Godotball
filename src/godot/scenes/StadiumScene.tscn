@@ -1,9 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://stadium_scene"]
+[gd_scene load_steps=14 format=3 uid="uid://stadium_scene"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://ball_node" path="res://scenes/BallNode.tscn" id="2_ball"]
-[ext_resource type="PackedScene" uid="uid://player_node" path="res://scenes/Player_node.tscn" id="3_player"]
-[ext_resource type="Texture2D" uid="uid://pitch_texture" path="res://../assets/textures/pitch/seamlessgrass08.png" id="4_grass"]
+[ext_resource type="PackedScene" uid="uid://player_node" path="res://scenes/PlayerNode.tscn" id="3_player"]
+[ext_resource type="Texture2D" uid="uid://pitch_texture" path="res://assets/textures/pitch/seamlessgrass08.png" id="4_grass"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pitch"]
 size = Vector3(105, 0.1, 68)
