@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://stadium_scene"]
+[gd_scene load_steps=16 format=3 uid="uid://stadium_scene"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://ball_node" path="res://scenes/BallNode.tscn" id="2_ball"]
 [ext_resource type="PackedScene" uid="uid://player_node" path="res://scenes/PlayerNode.tscn" id="3_player"]
 [ext_resource type="Texture2D" uid="uid://pitch_texture" path="res://assets/textures/pitch/seamlessgrass08.png" id="4_grass"]
 [ext_resource type="Script" path="res://scripts/PitchSystem.gd" id="5_pitch_system"]
+[ext_resource type="Script" path="res://scripts/StadiumShell.gd" id="6_stadium_shell"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pitch"]
 size = Vector3(105, 0.1, 68)
@@ -105,6 +106,9 @@ surface_material_override/0 = SubResource("Mat_white")
 
 [node name="PitchSystem" type="Node3D" parent="."]
 script = ExtResource("5_pitch_system")
+
+[node name="StadiumShell" type="Node3D" parent="."]
+script = ExtResource("6_stadium_shell")
 
 [node name="BallNode" parent="." instance=ExtResource("2_ball")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
