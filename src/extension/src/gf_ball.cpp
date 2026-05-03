@@ -1,6 +1,8 @@
 #include "gf_ball.h"
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/classes/collision_shape3d.hpp>
+#include <godot_cpp/classes/sphere_shape3d.hpp>
 #include <cmath>
 #include <algorithm>
 
@@ -13,6 +15,20 @@ GFBall::GFBall() {
 
 GFBall::~GFBall() {}
 
+void GFBall::_ready() {
+    // Build collision shape at runtime so the scene file stays minimal
+    CollisionShape3D *shape_node = memnew(CollisionShape3D);
+    Ref<SphereShape3D> sphere;
+    sphere.instantiate();
+    sphere->set_radius(BALL_RADIUS);
+    shape_node->set_shape(sphere);
+    add_child(shape_node);
+
+    set_monitoring(true);
+    set_monitorable(true);
+    connect("body_entered", Callable(this, "on_body_entered"));
+}
+
 void GFBall::_bind_methods() {
     ClassDB::bind_method(D_METHOD("step", "delta"), &GFBall::step);
     ClassDB::bind_method(D_METHOD("touch", "force"), &GFBall::touch);
@@ -21,6 +37,23 @@ void GFBall::_bind_methods() {
     ClassDB::bind_method(D_METHOD("get_momentum"), &GFBall::get_momentum);
     ClassDB::bind_method(D_METHOD("get_predicted_position", "ms"), &GFBall::get_predicted_position);
     ClassDB::bind_method(D_METHOD("get_all_predictions"), &GFBall::get_all_predictions);
+    ClassDB::bind_method(D_METHOD("on_body_entered", "body"), &GFBall::on_body_entered);
+}
+
+void GFBall::on_body_entered(Node3D *body) {
+    Vector3 dir_to_ball = (get_global_position() - body->get_global_position()).normalized();
+
+    // Pull the player's current velocity if available (GFPlayer exposes get_velocity())
+    Vector3 player_vel = Vector3(0, 0, 0);
+    if (body->has_method("get_velocity")) {
+        Variant v = body->call("get_velocity");
+        if (v.get_type() == Variant::VECTOR3) {
+            player_vel = (Vector3)v;
+        }
+    }
+
+    Vector3 force = (player_vel * TOUCH_VELOCITY_FACTOR) + (dir_to_ball * TOUCH_BASE_FORCE);
+    touch(force);
 }
 
 void GFBall::step(double delta) {
