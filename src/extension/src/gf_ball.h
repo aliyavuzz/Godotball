@@ -31,15 +31,18 @@ protected:
 
 private:
     Vector3 momentum; // m/s
-    // Godot uses Y-up, GF uses Z-up. 
-    // We will use Godot coordinates internally to avoid confusion in the scene.
-    
+    // Godot uses Y-up, GF uses Z-up.
+    // We use Godot's Y-up internally and operate on GLOBAL coordinates
+    // so that any parent node transform does not corrupt the simulation.
+
     static constexpr float BALL_RADIUS = 0.11f;
+    static constexpr float TIME_STEP = 0.01f;       // 10 ms = 100 Hz, matches original GF
     static constexpr int PREDICTION_STEP_MS = 10;
-    static constexpr int PREDICTION_COUNT = 100; // 1 second prediction
-    
+    static constexpr int PREDICTION_COUNT = 100;    // 1 second prediction lookahead
+
     std::vector<Vector3> predictions;
-    
+    double accumulated_time = 0.0;                  // delta accumulator for fixed-step sim
+
     // Physics constants from original GF
     float bounce = 0.62f;
     float linearBounce = 0.06f;
@@ -49,6 +52,11 @@ private:
     float gravity = -9.81f;
     float grassHeight = 0.025f;
 
+    // Advance momentum + position by one fixed-step tick.
+    // Returns the (mutated) momentum so that callers (or prediction loop) can carry on.
+    void integrate(Vector3 &io_pos, Vector3 &io_momentum, float dt) const;
+
+    // Read-only forward roll-out into the predictions[] array, starting from current state.
     void calculate_predictions();
 };
 
